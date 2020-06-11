@@ -7,36 +7,21 @@ const userSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   username: {
     type: String,
     unique: true,
-    required: true
-  },
-  role: {
-    type: String,
     required: true,
-    default: "User",
-    enum: ["Admin", "Author", "User"]
   },
-  joinDate: {
-    type: Date,
-    required: true,
-    default: Date.now()
-  },
-  banned: {
-    type: Boolean,
-    required: true,
-    default: false
-  }
+  realName: String,
 });
 
-userSchema.pre("save", async function(next) {
+userSchema.pre("save", async function (next) {
   const user = this;
 
   if (user.isModified("password") || user.isNew) {
@@ -52,7 +37,7 @@ userSchema.pre("save", async function(next) {
   }
 });
 
-userSchema.methods.comparePassword = function(password) {
+userSchema.methods.comparePassword = function (password) {
   return bcrypt.compare(password, this.password);
 };
 
