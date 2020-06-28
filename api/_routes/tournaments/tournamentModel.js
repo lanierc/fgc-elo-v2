@@ -9,6 +9,7 @@ const tournamentSchema = new Schema({
     required: true,
   },
   location: String,
+  date: Date,
   bracket: String,
   results: [
     {
