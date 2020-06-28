@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getToken } from '../../services/tokenService';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  token: String;
+
+  constructor() {
+    this.token = getToken();
+  }
 
   ngOnInit(): void {}
 }
