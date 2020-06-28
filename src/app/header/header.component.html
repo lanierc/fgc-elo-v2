@@ -2,6 +2,7 @@
   <span>Sailor Moon S Global Rankings</span>
   <span class="example-fill-remaining-space"></span>
   <span>
-    <a mat-button routerLink="/login">Login</a>
+    <a mat-button routerLink="/login" *ngIf="!token">Login</a>
+    <a mat-button routerLink="/add-tournament" *ngIf="token">Add Tournament</a>
   </span>
 </mat-toolbar>
