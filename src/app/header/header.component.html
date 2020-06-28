@@ -3,6 +3,10 @@
   <span class="example-fill-remaining-space"></span>
   <span>
     <a mat-button routerLink="/login" *ngIf="!token">Login</a>
+    <a mat-button routerLink="/suggest-tournament" *ngIf="!token"
+      >Suggest Tournament</a
+    >
     <a mat-button routerLink="/add-tournament" *ngIf="token">Add Tournament</a>
+    <a mat-button *ngIf="token">Logout</a>
   </span>
 </mat-toolbar>
