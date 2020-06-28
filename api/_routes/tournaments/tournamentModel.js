@@ -18,6 +18,7 @@ const tournamentSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: Player,
       },
+      tournamentScore: Number,
     },
   ],
   replay: String,
