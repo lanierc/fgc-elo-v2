@@ -27,7 +27,6 @@ router.route("/login").post(async (req, res, next) => {
         data: {
           token,
           id: user._id,
-          role: user.role,
         },
       });
     } else {
